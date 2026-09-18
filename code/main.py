@@ -41,11 +41,10 @@ def main():
     # """load data"""
     training_generator , val_generator , test_generator,_,_= preparedataset(cfg.SOLVER.BATCH_SIZE,args.type,args.data)
     all_results = []
-    seed = cfg.SOLVER.SEED  # 从配置文件中获取种子列表
+    seed = cfg.SOLVER.SEED  
     # for seed in seeds:
     print(f"\n===== Running with seed {seed} =====")
     set_seed(seed)
-    # 每个 seed 单独输出目录
     seed_output_path = os.path.join(output_path, f"seed_{seed}")
     cfg.RESULT.OUTPUT_DIR = seed_output_path
     mkdir(seed_output_path)
@@ -54,7 +53,6 @@ def main():
     trainer = Trainer(model, opt, device, training_generator, val_generator, test_generator, **cfg)
     result = trainer.train(args.type)
     all_results.append(result)
-    # 保存模型结构
     seed_model_file = os.path.join(seed_output_path, "model_architecture.txt")
     with open(seed_model_file, "w") as wf:
         wf.write(str(model))
