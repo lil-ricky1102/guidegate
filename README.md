@@ -41,7 +41,7 @@ on your system.
 ## Pretrained BERT Models
 
 Download both pretrained models from
-[Google Drive](https://drive.google.com/drive/folders/147QBDVBlQeHT-KikSjRbX7aoBAziy638?usp=drive_link):
+[Google Drive](https://drive.google.com/file/d/1hQJYe4bAIcfjaE-lKWnDElZRAyREpceu/view?usp=drive_link):
 
 - `prot_bert` is used to generate protein sequence embeddings.
 - `ChemBERTa-77M-MLM` is used to generate SMILES embeddings.
